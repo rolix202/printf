@@ -12,7 +12,7 @@
 typedef struct format_specs
 {
     char *c;
-    int (*f)();
+    int (*f)(va_list);
 } f_specs;
 
 void _putchar(char c);
@@ -20,6 +20,6 @@ int _printf(const char *format, ...);
 
 int _print_str(va_list);
 int _print_char(va_list);
-int _print_mod(va_list);
+int _print_mod(__attribute__((unused))va_list arg);
 
 #endif

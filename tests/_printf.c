@@ -15,25 +15,30 @@ int _printf(const char *format, ...)
 	};
 	
 	va_list arg;
-    int i, j, len = 0;
+    int i = 0, j, len = 0;
 
     va_start(arg, format);
 
-    for (i = 0; format[i] != '\0'; i++)
+    while (format[i] != '\0')
     {
-        if (format[i] == '%')
-		{
-			for (j = 0; specs[j].c != NULL; j++)
+			if (format[i] == '%')
 			{
-				if (specs[j].c[0] == format[i] && specs[j].c[1] == format[i + 1])
+				for (j = 0; specs[j].c != NULL; j++)
 				{
-					len += specs[j].f(arg);
+					if (specs[j].c[0] == format[i] && specs[j].c[1] == format[i + 1])
+					{
+						len += specs[j].f(arg);
+						if (format[i + 1] != '%')
+							arg += sizeof(va_list);
+						i++;
+					}
 				}
+				i++;
 			}
-			i += 2;
-		}
 		_putchar(format[i]);
 		len++;
+		i++;
     }
+	va_end(arg);
 	return (len);
 }

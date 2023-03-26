@@ -4,23 +4,21 @@
 
 int main()
 {
-	int i;
-	char arr[6] = "hello";
-	char c = 'g';
-	
-	i = printf("Tis a %s sen\n", arr);
-	printf("%d\n", i);
-	i = _printf("Tis a %s sen\n", arr);/* doesnt work when nothing is passed */
-	printf("%d\n\n", i);
+	int len;
+    int len2;
 
-	i = printf("Tis a sen %c %c\n",c);
-	printf("%d\n", i);
-	i = _printf("Tis a sen %c %c\n", 48);
-	printf("%d\n\n", i);
+	len = _printf("Let's try to printf simple sentence.\n");
+    len2 = printf("Let's try to printf simple sentence.\n");
+	_printf("Character:[%c]\n", 'H');
+    printf("Character:[%c]\n", 'H');
+    _printf("String:[%s]\n", "I am a string !");
+    printf("String:[%s]\n", "I am a string !");
+	len = _printf("Percent:[%%]\n");
+    len2 = printf("Percent:[%%]\n");
+	puts("\n");
 
-	i = printf("%%\n");
-	printf("%d\n", i);
-	i = _printf("%%\n"); /* calls va_arg and sets next arg without using it - i think */
-	printf("%d\n\n", i);
+	_printf("my printf %c %s %c %s %s %% %c %%\n", 'g', "sentence", 't', "another", "word", 'a');
+	puts("\n");
+	printf("std printf %c %s %c %s %s %% %c %%\n", 'g', "sentence", 't', "another", "word", 'a');
 	return (0);
 }
