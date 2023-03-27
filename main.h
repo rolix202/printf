@@ -21,5 +21,7 @@ int _printf(const char *format, ...);
 int _print_str(va_list);
 int _print_char(va_list);
 int _print_mod(__attribute__((unused))va_list arg);
+int _print_decimal(va_list arg);
+int _print_int(va_list arg);
 
 #endif
