@@ -8,7 +8,8 @@
 int _print_int(va_list arg)
 {
     int n = va_arg(arg, int);
-    int rev_num = 0;
+    /*int rev_num = 0; please uncomment this line to comply with compile flags and change spaces to tabs to comply with betty
+     * and please delet main.c file */
     int len = 0;
 
     if (n == 0)

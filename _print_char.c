@@ -12,7 +12,6 @@ int _print_char(va_list arg)
 
 	if (c == '\0')
 		return (0);
-	
 	_putchar(c);
 	return (1);
 }

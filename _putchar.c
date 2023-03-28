@@ -3,6 +3,7 @@
 /**
  * _putchar - write char to stdout
  * @c: char to write
+ * Return: chars written
  */
 int _putchar(char *c)
 {
