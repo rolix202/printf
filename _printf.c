@@ -30,12 +30,11 @@ int _printf(const char *format, ...)
 					if (specs[j].c[0] == format[i] && specs[j].c[1] == format[i + 1])
 					{
 						len += specs[j].f(arg);
-						if (format[i + 1] != '%')
-							arg += sizeof(va_list);
-						i++;
+						/*if (format[i + 1] != '%')
+							arg += sizeof(va_list);*/
+						i += 2;
 					}
-				}
-				i++;
+				}	
 			}
 		_putchar(format[i]);
 		len++;

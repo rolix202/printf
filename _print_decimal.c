@@ -7,6 +7,7 @@
 int _print_decimal(va_list arg)
 {
     int n = va_arg(arg, int);
+    int rev_num = 0;
     int len = 0;
 
     if (n == 0)
@@ -21,7 +22,6 @@ int _print_decimal(va_list arg)
         n = -n;
     }
 
-    int rev_num = 0;
     while (n > 0)
     {
         rev_num = rev_num * 10 + n % 10;

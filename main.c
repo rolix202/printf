@@ -15,6 +15,8 @@ int main()
     printf("String:[%s]\n", "I am a string !");
 	len = _printf("Percent:[%%]\n");
     len2 = printf("Percent:[%%]\n");
+    _printf("%d\n", len);
+    printf("%d\n", len2);
 	puts("\n");
 
 	_printf("my printf %c %s %c %s %s %% %c %%\n", 'g', "sentence", 't', "another", "word", 'a');
